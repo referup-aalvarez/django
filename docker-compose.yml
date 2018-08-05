@@ -2,9 +2,10 @@ version: "2"
 services:
   django:
     container_name: django_server
-    build:
-      context: .
-      dockerfile: Dockerfile
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+    image: albertalvarezbruned/django
     stdin_open: true
     tty: true
     volumes:
