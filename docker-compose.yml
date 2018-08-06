@@ -5,8 +5,8 @@ services:
     image: albertalvarezbruned/django 
     stdin_open: true 
     tty: true 
-    volumes: 
-      - ./myproject:/myproject/myproject 
+#    volumes: 
+#      - ./myproject:/myproject/myproject #only if you clone repo 
     ports: 
       - "8000:8000" 
     depends_on: 
