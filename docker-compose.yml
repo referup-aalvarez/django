@@ -1,19 +1,16 @@
-version: "2"
-services:
-  django:
-    container_name: django_server
-#    build:
-#      context: .
-#      dockerfile: Dockerfile
-    image: albertalvarezbruned/django
-    stdin_open: true
-    tty: true
-    volumes:
-      - ./myproject:/myproject/myproject
-    ports:
-      - "8000:8000"
-    depends_on:
-      - db
-  db:
-    image: postgres
+version: "2" 
+services: 
+  django: 
+    container_name: django_server 
+    image: albertalvarezbruned/django 
+    stdin_open: true 
+    tty: true 
+    volumes: 
+      - ./myproject:/myproject/myproject 
+    ports: 
+      - "8000:8000" 
+    depends_on: 
+      - db 
+  db: 
+    image: postgres 
 
