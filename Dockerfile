@@ -17,6 +17,7 @@ RUN apt-get install -y \
 # Project Files and Settings
 ARG PROJECT=myproject
 COPY requirements.txt .
+RUN pip3 install psycopg2
 RUN pip install -r requirements.txt
 RUN django-admin startproject ${PROJECT}
 ## ADD ./myproject /myproject/myproject
