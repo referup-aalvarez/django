@@ -19,11 +19,12 @@ ARG PROJECT=myproject
 COPY requirements.txt .
 RUN pip3 install psycopg2
 RUN pip install -r requirements.txt
+RUN pip3 install psycopg2-binary
 RUN django-admin startproject ${PROJECT}
-## ADD ./myproject /myproject/myproject
 WORKDIR /${PROJECT}
-
+COPY entry.sh /root
+RUN chmod +x /root/entry.sh
 # Server
  EXPOSE 8000
  STOPSIGNAL SIGINT
- ENTRYPOINT ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+ENTRYPOINT ["/root/entry.sh"]
