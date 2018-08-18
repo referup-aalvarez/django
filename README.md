@@ -1,6 +1,6 @@
 # django
 
-
+```yaml
 version: "2" 
 services: 
   postgres:
@@ -31,3 +31,4 @@ services:
       - DJPASS=passadmin 
       - DJEMAIL="admin@admin.com" 
       - DJPORT=8000 
+```
